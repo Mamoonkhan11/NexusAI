@@ -1,0 +1,22 @@
+NEXUSAI DEMO SCREENSHOT PLACEHOLDER
+
+This file should be replaced with: demo-screenshot.png
+
+Recommended specifications:
+- Dimensions: 800x500px (16:10 aspect ratio)
+- Format: PNG
+- Content: Screenshot of NexusAI chat interface
+- Should show:
+  - Chat input area
+  - AI response display
+  - Model selector
+  - Modern UI elements
+
+To create this screenshot:
+1. Run the application locally (npm run dev)
+2. Navigate to the chat interface
+3. Take a screenshot showing the main functionality
+4. Edit if needed to highlight key features
+5. Ensure good resolution and clarity
+
+This image will appear in the Demo section of the README.md file.
