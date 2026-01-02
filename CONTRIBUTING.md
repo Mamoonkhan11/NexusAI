@@ -15,7 +15,7 @@ Thank you for your interest in contributing to NexusAI! This document provides g
 2. **Clone your fork** locally:
    ```bash
    git clone https://github.com/Mamoonkhan11/NexusAI.git
-   cd nexusai
+   cd NexusAI
    ```
 3. **Install dependencies**:
    ```bash
@@ -189,3 +189,4 @@ npm run start
 - [ ] Security implications considered
 
 Thank you for contributing to NexusAI! 🎉
+#
