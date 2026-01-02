@@ -130,18 +130,6 @@ config/secrets.json
 .local
 .dev
 
-# Screenshots (keep README images)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-!nexusai-hero.png
-!demo-screenshot.png
-!docs/images/*.png
-!docs/images/*.jpg
-!docs/images/*.svg
-
 # Local development files
 .env.backup
 config.local.json
