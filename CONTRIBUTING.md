@@ -14,7 +14,7 @@ Thank you for your interest in contributing to NexusAI! This document provides g
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/yourusername/nexusai.git
+   git clone https://github.com/Mamoonkhan11/NexusAI.git
    cd nexusai
    ```
 3. **Install dependencies**:
@@ -177,12 +177,6 @@ npm run test:e2e
 npm run build
 npm run start
 ```
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/nexusai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/nexusai/discussions)
-- **Documentation**: [docs.nexusai.com](https://docs.nexusai.com)
 
 ## 📋 Checklist for Contributions
 
