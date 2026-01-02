@@ -80,7 +80,7 @@ Experience NexusAI in action:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Mamoonkhan!11/NexusAI.git
+   git clone https://github.com/Mamoonkhan11/NexusAI.git
    cd NexusAI
    ```
 
