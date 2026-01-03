@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -122,7 +122,9 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 relative overflow-hidden">
-      <UnauthorizedToast />
+      <Suspense fallback={null}>
+        <UnauthorizedToast />
+      </Suspense>
 
       {/* Interactive Background Effects */}
       <div className="absolute inset-0 overflow-hidden">

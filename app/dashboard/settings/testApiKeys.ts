@@ -1,5 +1,3 @@
-"use server"
-
 import { createClient } from "@/lib/supabase/server"
 import { getUser } from "@/lib/supabase/getUser"
 import { testOpenAIKey, testGroqKey, testGeminiKey, testClaudeKey } from "@/lib/ai/testKeys"

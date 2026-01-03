@@ -31,7 +31,6 @@ import {
 } from "@/components/ui/dialog"
 import { toast } from "sonner"
 import { updateProfile, changePassword, deleteAccount, uploadAvatar, removeAvatar } from "./actions"
-import { testApiKeys } from "./testApiKeys"
 import type { UserProfile } from "@/lib/supabase/getCurrentUserProfile"
 
 interface SettingsPageClientProps {
@@ -143,7 +142,7 @@ export function SettingsPageClient({ userProfile }: SettingsPageClientProps) {
     if (e && e.preventDefault) e.preventDefault()
     try {
       setIsTesting(true)
-      const res = await fetch("/api/test-keys")
+      const res = await fetch("/api/test-keys", { method: "POST" })
       if (!res.ok) {
         setApiTestResults({ openai: "error", groq: "error", gemini: "error" })
         return
@@ -418,16 +417,13 @@ export function SettingsPageClient({ userProfile }: SettingsPageClientProps) {
               <div>{renderBadge(apiTestResults?.claude)}</div>
             </div>
             <div className="pt-2 px-4">
-              <form>
-                <Button
-                  formAction={testApiKeys}
-                  onClick={handleTestKeys}
-                  className="bg-slate-700/60 hover:bg-slate-700/70 text-white"
-                  disabled={isTesting}
-                >
-                  {isTesting ? "Testing..." : "Test API Keys"}
-                </Button>
-              </form>
+              <Button
+                onClick={handleTestKeys}
+                className="bg-slate-700/60 hover:bg-slate-700/70 text-white"
+                disabled={isTesting}
+              >
+                {isTesting ? "Testing..." : "Test API Keys"}
+              </Button>
             </div>
           </CardContent>
       </Card>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
+import { Suspense } from "react";
 import UserAccessToast from "@/components/user-access-toast";
 import "./globals.css";
 
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <Toaster />
-        <UserAccessToast />
+        <Suspense fallback={null}>
+          <UserAccessToast />
+        </Suspense>
       </body>
     </html>
   );
