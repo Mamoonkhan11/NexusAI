@@ -8,6 +8,12 @@
 
 ---
 
+## 🚀 Check the Software
+
+Experience NexusAI live: **[nexusai.com](https://nexus-ai-nx.vercel.app/)**
+
+Try the intelligent AI assistant powered by Vionys - bridging obstacles in AI technology.
+
 ## About NexusAI
 
 **NexusAI** is a revolutionary AI platform by **Vionys** that bridges obstacles in AI technology, making advanced artificial intelligence accessible, secure, and seamlessly integrated into your workflow.

@@ -399,8 +399,8 @@ export default function LandingPage() {
             <div className="flex justify-center space-x-8">
               {[
                 { Icon: Twitter, href: "https://twitter.com/nexusai", label: "Twitter" },
-                { Icon: Github, href: "https://github.com/nexusai", label: "GitHub" },
-                { Icon: Linkedin, href: "https://linkedin.com/company/nexusai", label: "LinkedIn" },
+                { Icon: Github, href: "https://github.com/Mamoonkhan11", label: "GitHub" },
+                { Icon: Linkedin, href: "https://linkedin.com/in/mamoonrashid11", label: "LinkedIn" },
                 { Icon: Youtube, href: "https://youtube.com/@nexusai", label: "YouTube" },
               ].map(({ Icon, href, label }, idx) => (
                 <a
