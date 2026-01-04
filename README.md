@@ -1,7 +1,7 @@
 # Brainlyx AI
 
 <p align="center">
-  <img src="./demo.png" alt="Brainlyx AI - Bridging AI Obstacles with Vionys" width="100%" />
+  <img src="./demo1.png" alt="Brainlyx AI - Bridging AI Obstacles with Vionys" width="100%" />
   <br>
   <em>Powered by Vionys</em>
 </p>
@@ -10,7 +10,7 @@
 
 ## Check the Software
 
-Experience Brainlyx AI live: **[brainlyx.com](https://nexus-ai-nx.vercel.app/)**
+Experience Brainlyx AI live: **[brainlyx.com](https://brainlyx-ai-nx.vercel.app/)**
 
 Try the intelligent AI assistant powered by Vionys - bridging obstacles in AI technology.
 
@@ -86,8 +86,8 @@ Experience Brainlyx AI in action:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Mamoonkhan11/Brainlyx AI.git
-   cd Brainlyx AI
+   git clone https://github.com/Mamoonkhan11/Brainlyx_AI
+   cd Brainlyx_AI
    ```
 
 2. **Install dependencies**
@@ -202,7 +202,9 @@ brainlyx/
 ├── scripts/                      # Setup and utility scripts
 │   ├── create-admin.js           # Admin user creation
 │   ├── setup-admin.js            # Admin setup checker
-│   └── setup-database.js         # Database initialization
+│   ├── setup-database.js         # Database initialization
+│   ├── setup-env.js              # Environment configuration setup
+│   └── test-admin-login.js       # Admin login testing utility
 ├── supabase/                     # Database migrations
 │   └── migrations/               # SQL migration files
 └── public/                       # Static assets
