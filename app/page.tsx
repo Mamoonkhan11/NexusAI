@@ -165,7 +165,7 @@ export default function LandingPage() {
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300">
-                NexusAI
+                Brainlyx AI
               </span>
               <span className="text-xs text-slate-400 font-medium group-hover:text-slate-300 transition-all duration-300">
                 powered by Vionys
@@ -272,7 +272,7 @@ export default function LandingPage() {
       {/* About Section */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <Card className="backdrop-blur-xl bg-white/5 border-white/10 p-8 sm:p-12">
-          <h2 className="text-4xl font-bold text-white mb-6">About Vionys & NexusAI</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">About Vionys & Brainlyx AI</h2>
           <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
             <p>
               <strong>Vionys</strong> is dedicated to bridging obstacles in AI technology, making advanced artificial intelligence
@@ -280,7 +280,7 @@ export default function LandingPage() {
               individuals from leveraging the full potential of AI.
             </p>
             <p>
-              <strong>NexusAI</strong>, powered by Vionys, provides a unified platform that connects you to multiple AI models
+              <strong>Brainlyx AI</strong>, powered by Vionys, provides a unified platform that connects you to multiple AI models
               through a single, intuitive interface. Experience seamless AI integration with enterprise-grade security and
               privacy-first architecture.
             </p>
@@ -398,10 +398,10 @@ export default function LandingPage() {
             </h3>
             <div className="flex justify-center space-x-8">
               {[
-                { Icon: Twitter, href: "https://twitter.com/nexusai", label: "Twitter" },
+                { Icon: Twitter, href: "https://twitter.com/brainlyx", label: "Twitter" },
                 { Icon: Github, href: "https://github.com/Mamoonkhan11", label: "GitHub" },
                 { Icon: Linkedin, href: "https://linkedin.com/in/mamoonrashid11", label: "LinkedIn" },
-                { Icon: Youtube, href: "https://youtube.com/@nexusai", label: "YouTube" },
+                { Icon: Youtube, href: "https://youtube.com/@brainlyx", label: "YouTube" },
               ].map(({ Icon, href, label }, idx) => (
                 <a
                   key={idx}
@@ -427,7 +427,7 @@ export default function LandingPage() {
             <p className="text-slate-400 text-lg font-medium relative z-10">
               © 2025{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent font-semibold">
-                NexusAI
+                Brainlyx AI
               </span>
               {" "}by Vionys. All rights reserved.
             </p>

@@ -3,14 +3,14 @@
 /**
  * Admin Setup Helper Script
  *
- * This script helps you set up admin access for the NexusAI application.
+ * This script helps you set up admin access for the Brainlyx AI application.
  * It checks for environment variables and provides instructions for creating admin users.
  */
 
 const fs = require('fs')
 const path = require('path')
 
-console.log('🔧 NexusAI Admin Setup Helper')
+console.log('🔧 Brainlyx AI Admin Setup Helper')
 console.log('==============================\n')
 
 // Check if .env.local exists

@@ -12,14 +12,23 @@ interface ChatMessage {
 
 // Log API usage to the database
 async function logApiUsage(userId: string | undefined, provider: string) {
-  if (!userId) return; // Skip logging if no user ID
+  if (!userId) {
+    console.log("Skipping API log: no user ID");
+    return; // Skip logging if no user ID
+  }
 
   try {
     const supabase = await createClient();
-    await supabase.from("api_logs").insert({
+    const { data, error } = await supabase.from("api_logs").insert({
       user_id: userId,
       provider,
-    });
+    }).select();
+
+    if (error) {
+      console.error("Failed to log API usage:", error);
+    } else {
+      console.log(`✅ API usage logged: provider=${provider}, user_id=${userId}`);
+    }
   } catch (error) {
     console.error("Failed to log API usage:", error);
     // Don't throw - logging failure shouldn't break the main flow

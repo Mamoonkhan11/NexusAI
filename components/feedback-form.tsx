@@ -97,7 +97,7 @@ export default function FeedbackForm() {
         </Label>
         <Textarea
           id="feedback-message"
-          placeholder="Tell us what you think about NexusAI..."
+          placeholder="Tell us what you think about Brainlyx AI..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="border-slate-700/50 bg-slate-800/50 text-white placeholder:text-slate-400 focus-visible:ring-cyan-400 rounded-lg min-h-[100px] resize-none"

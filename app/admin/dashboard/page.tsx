@@ -209,19 +209,68 @@ async function FeedbackSection() {
 
 async function ApiLogsSection() {
   const providerCounts: Record<string, number> = {}
+  let totalApiCalls = 0
+  let timeRange = "last hour"
+  let logs: Array<{ provider: string; created_at: string }> | null = null
 
   try {
     const supabase = await createAdminClient()
-    const oneMinuteAgo = new Date(Date.now() - 60 * 1000).toISOString()
-    const { data: logs } = await supabase
+
+    // Try last hour first
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString()
+    console.log('ApiLogsSection: Querying api_logs from:', oneHourAgo)
+    
+    const { data: logsData, error: logsError } = await supabase
       .from('api_logs')
       .select('provider, created_at')
-      .gte('created_at', oneMinuteAgo)
+      .gte('created_at', oneHourAgo)
+    
+    logs = logsData
+    
+    console.log('ApiLogsSection: Query result:', { 
+      logsCount: logs?.length || 0, 
+      error: logsError?.message || null,
+      sampleLog: logs?.[0] || null
+    })
+
+    if (logsError) {
+      console.error('Error fetching API logs:', logsError)
+      // Try last 24 hours as fallback
+      const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+      const { data: logsDay, error: logsDayError } = await supabase
+        .from('api_logs')
+        .select('provider, created_at')
+        .gte('created_at', oneDayAgo)
+
+      if (logsDayError) {
+        console.error('Error fetching API logs (24h):', logsDayError)
+      } else {
+        logs = logsDay
+        timeRange = "last 24 hours"
+      }
+    } else if (!logs || logs.length === 0) {
+      // If no logs in last hour, try last 24 hours
+      const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+      const { data: logsDay } = await supabase
+        .from('api_logs')
+        .select('provider, created_at')
+        .gte('created_at', oneDayAgo)
+
+      if (logsDay && logsDay.length > 0) {
+        logs = logsDay
+        timeRange = "last 24 hours"
+      }
+    }
+
+    console.log(`API Logs: Found ${logs?.length || 0} logs in ${timeRange}`)
 
     // Count by provider
     logs?.forEach(log => {
       providerCounts[log.provider] = (providerCounts[log.provider] || 0) + 1
+      totalApiCalls++
     })
+
+    console.log('API Logs provider counts:', providerCounts)
   } catch (error) {
     console.error('Error fetching API logs:', error)
     // Keep empty providerCounts
@@ -234,9 +283,11 @@ async function ApiLogsSection() {
       <CardHeader className="px-6 pt-6 pb-4">
         <CardTitle className="text-white flex items-center gap-2 text-lg">
           <Activity className="h-5 w-5" />
-          API Usage (Last Minute)
+          API Usage ({timeRange})
         </CardTitle>
-        <CardDescription className="text-slate-400">Real-time API provider usage statistics</CardDescription>
+        <CardDescription className="text-slate-400">
+          Total calls: {totalApiCalls} | Real-time API provider usage statistics
+        </CardDescription>
       </CardHeader>
       <CardContent className="px-6 pb-6">
         <div className="space-y-3">
@@ -254,7 +305,10 @@ async function ApiLogsSection() {
               </div>
             ))
           ) : (
-            <p className="text-slate-400 text-center py-4">No API calls in the last minute</p>
+            <div className="text-center py-4">
+              <p className="text-slate-400 mb-2">No API calls recorded yet</p>
+              <p className="text-xs text-slate-500">API usage will appear here once users start chatting</p>
+            </div>
           )}
         </div>
       </CardContent>

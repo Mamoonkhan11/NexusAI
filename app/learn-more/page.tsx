@@ -171,7 +171,7 @@ export default function LearnMorePage() {
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300">
-                NexusAI
+                Brainlyx AI
               </span>
               <span className="text-xs text-slate-400 font-medium group-hover:text-slate-300 transition-all duration-300">
                 powered by Vionys
@@ -228,7 +228,7 @@ export default function LearnMorePage() {
           <div className="max-w-4xl mx-auto">
             <p className="text-xl sm:text-2xl text-slate-300 leading-relaxed animate-fade-in-up delay-400">
               Discover how Vionys bridges obstacles in AI technology. Learn about the cutting-edge technologies that power
-              NexusAI and why it's the perfect solution for seamless, secure AI integration.
+              Brainlyx AI and why it's the perfect solution for seamless, secure AI integration.
             </p>
           </div>
 
@@ -388,7 +388,7 @@ export default function LearnMorePage() {
               </div>
 
               <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">
-                Ready to use NexusAI?
+                Ready to use Brainlyx AI?
               </h2>
 
               <p className="text-xl text-slate-300 max-w-2xl mx-auto">
@@ -422,7 +422,7 @@ export default function LearnMorePage() {
                 Contact Information
               </h3>
               <p className="text-slate-400 text-lg mb-2">
-                <span className="font-semibold">Email:</span> support@nexusai.com
+                <span className="font-semibold">Email:</span> support@brainlyx.com
               </p>
               <p className="text-slate-400 text-lg leading-relaxed">
                 Have questions? We're here to help and answer any questions you might have about our AI-powered platform.
@@ -453,7 +453,7 @@ export default function LearnMorePage() {
             <p className="text-slate-400 text-lg font-medium relative z-10">
               © 2025{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent font-semibold">
-                NexusAI
+                Brainlyx AI
               </span>
               . All rights reserved.
             </p>

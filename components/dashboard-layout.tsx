@@ -56,7 +56,7 @@ export function DashboardLayout({
           <div className="flex items-center h-14 px-4 border-b border-white/20">
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-cyan-400" />
-              <span className="text-base font-semibold text-white">NexusAI</span>
+              <span className="text-base font-semibold text-white">Brainlyx AI</span>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ export function DashboardLayout({
               <div className="flex items-center justify-between h-14 px-4 border-b border-white/20">
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-cyan-400" />
-                  <span className="text-base font-semibold text-white">NexusAI</span>
+                  <span className="text-base font-semibold text-white">Brainlyx AI</span>
                 </div>
                 <Button
                   variant="ghost"
@@ -146,7 +146,7 @@ export function DashboardLayout({
 
               <div className="flex items-center gap-2 lg:hidden">
                 <Zap className="w-4 h-4 text-cyan-400" />
-                <span className="text-sm font-semibold text-white">NexusAI</span>
+                <span className="text-sm font-semibold text-white">Brainlyx AI</span>
               </div>
             </div>
 

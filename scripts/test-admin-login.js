@@ -25,8 +25,8 @@ async function testAdminLogin() {
 
   const supabase = createClient(supabaseUrl, supabaseKey)
 
-  const adminEmail = 'admin@nexusai.com'
-  const adminPassword = 'admin123456'
+  const adminEmail = 'admin@Brainlyx AI.com'
+  const adminPassword = 'admin@Brainlyx AI'
 
   console.log('🧪 Testing admin login...')
   console.log(`📧 Email: ${adminEmail}`)

@@ -27,7 +27,7 @@ export default function ForgotPasswordPage() {
               <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center gap-2 text-2xl font-bold text-white">
                   <Zap className="w-6 h-6 text-cyan-400" />
-                  <span>NexusAI</span>
+                  <span>Brainlyx AI</span>
                 </div>
                 <span className="text-xs text-slate-400 font-medium">powered by Vionys</span>
               </div>

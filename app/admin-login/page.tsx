@@ -7,7 +7,7 @@ import { adminLogin } from "./actions"
 
 export const metadata: Metadata = {
   title: "Admin Login",
-  description: "Admin access to NexusAI system",
+  description: "Admin access to Brainlyx AI system",
 }
 
 export default function AdminLoginPage() {
@@ -24,7 +24,7 @@ export default function AdminLoginPage() {
           <Link href="/" className="flex items-center gap-3">
             <Zap className="w-6 h-6 text-cyan-400" />
             <div className="hidden sm:flex flex-col">
-              <span className="text-xl font-bold text-white">NexusAI</span>
+              <span className="text-xl font-bold text-white">Brainlyx AI</span>
               <span className="text-xs text-slate-400 font-medium">powered by Vionys</span>
             </div>
           </Link>

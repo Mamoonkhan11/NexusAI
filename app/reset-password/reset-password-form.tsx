@@ -59,7 +59,7 @@ export default function ResetPasswordForm() {
               <div className="flex justify-center">
                 <div className="flex items-center gap-2 text-2xl font-bold text-white">
                   <Zap className="w-6 h-6 text-cyan-400" />
-                  <span>NexusAI</span>
+                  <span>Brainlyx AI</span>
                 </div>
               </div>
               <div className="space-y-2">
@@ -98,7 +98,7 @@ export default function ResetPasswordForm() {
             <div className="flex justify-center">
               <div className="flex items-center gap-2 text-2xl font-bold text-white">
                 <Zap className="w-6 h-6 text-cyan-400" />
-                <span>NexusAI</span>
+                <span>Brainlyx AI</span>
               </div>
             </div>
             <div className="space-y-2">

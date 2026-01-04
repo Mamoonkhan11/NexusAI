@@ -3,14 +3,14 @@
 /**
  * Database Setup Script
  *
- * This script helps you set up the database tables for NexusAI.
+ * This script helps you set up the database tables for Brainlyx AI.
  * Run this after setting up your Supabase project.
  */
 
 const fs = require('fs')
 const path = require('path')
 
-console.log('🚀 NexusAI Database Setup')
+console.log('🚀 Brainlyx AI Database Setup')
 console.log('==========================\n')
 
 console.log('📋 Required Environment Variables:')

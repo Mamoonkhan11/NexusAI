@@ -1,11 +1,11 @@
-NEXUSAI DEMO SCREENSHOT PLACEHOLDER
+BRAINLYX AI DEMO SCREENSHOT PLACEHOLDER
 
 This file should be replaced with: demo-screenshot.png
 
 Recommended specifications:
 - Dimensions: 800x500px (16:10 aspect ratio)
 - Format: PNG
-- Content: Screenshot of NexusAI chat interface
+- Content: Screenshot of Brainlyx AI chat interface
 - Should show:
   - Chat input area
   - AI response display

@@ -1,22 +1,22 @@
-# NexusAI
+# Brainlyx AI
 
 <p align="center">
-  <img src="./demo.png" alt="NexusAI - Bridging AI Obstacles with Vionys" width="100%" />
+  <img src="./demo.png" alt="Brainlyx AI - Bridging AI Obstacles with Vionys" width="100%" />
   <br>
   <em>Powered by Vionys</em>
 </p>
 
 ---
 
-## 🚀 Check the Software
+## Check the Software
 
-Experience NexusAI live: **[nexusai.com](https://nexus-ai-nx.vercel.app/)**
+Experience Brainlyx AI live: **[brainlyx.com](https://nexus-ai-nx.vercel.app/)**
 
 Try the intelligent AI assistant powered by Vionys - bridging obstacles in AI technology.
 
-## About NexusAI
+## About Brainlyx AI
 
-**NexusAI** is a revolutionary AI platform by **Vionys** that bridges obstacles in AI technology, making advanced artificial intelligence accessible, secure, and seamlessly integrated into your workflow.
+**Brainlyx AI** is a revolutionary AI platform by **Vionys** that bridges obstacles in AI technology, making advanced artificial intelligence accessible, secure, and seamlessly integrated into your workflow.
 
 **Vionys** aims to bridge over obstacles in AI technology by providing:
 - **Unified Access** to multiple AI models through a single interface
@@ -66,10 +66,10 @@ Experience the future of intelligent automation where complex AI interactions be
 ## Demo
 
 <p align="center">
-  <img src="./demo2.png" alt="NexusAI Demo" width="80%" />
+  <img src="./demo2.png" alt="Brainlyx AI Demo" width="80%" />
 </p>
 
-Experience NexusAI in action:
+Experience Brainlyx AI in action:
 - **Interactive chat** with multiple AI models
 - **Seamless model switching** during conversations
 - **Real-time streaming responses**
@@ -86,8 +86,8 @@ Experience NexusAI in action:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Mamoonkhan11/NexusAI.git
-   cd NexusAI
+   git clone https://github.com/Mamoonkhan11/Brainlyx AI.git
+   cd Brainlyx AI
    ```
 
 2. **Install dependencies**
@@ -158,7 +158,7 @@ Experience NexusAI in action:
 
 ## API Support
 
-NexusAI supports the following AI providers:
+Brainlyx AI supports the following AI providers:
 
 | Provider | Models | Key Features |
 |----------|--------|--------------|
@@ -178,7 +178,7 @@ Configure your API keys in the dashboard settings:
 ## Project Structure
 
 ```
-nexusai/
+brainlyx/
 ├── app/                          # Next.js App Router
 │   ├── (auth)/                   # Authentication routes
 │   ├── admin/                    # Admin dashboard

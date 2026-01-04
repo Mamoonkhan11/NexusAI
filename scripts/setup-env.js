@@ -3,7 +3,7 @@
 /**
  * Environment Setup Script
  *
- * This script helps you set up your .env.local file for NexusAI.
+ * This script helps you set up your .env.local file for Brainlyx AI.
  */
 
 const fs = require('fs')
@@ -12,7 +12,7 @@ const path = require('path')
 const envLocalPath = path.join(__dirname, '..', '.env.local')
 const envTemplatePath = path.join(__dirname, '..', '.env.template')
 
-console.log('🔧 NexusAI Environment Setup')
+console.log('🔧 Brainlyx AI Environment Setup')
 console.log('============================\n')
 
 // Check if .env.local already exists
@@ -24,7 +24,7 @@ if (fs.existsSync(envLocalPath)) {
 }
 
 // Create .env.local with basic template
-const envContent = `# NexusAI Environment Configuration
+const envContent = `# Brainlyx AI Environment Configuration
 # Fill in your actual values below
 
 # ===========================================

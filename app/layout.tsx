@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NexusAI",
+  title: "Brainlyx AI",
   description: "A Next.js 15 project with TypeScript, Tailwind, and ShadCN",
 };
 

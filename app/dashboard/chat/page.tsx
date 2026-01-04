@@ -459,7 +459,7 @@ export default function ChatPage() {
                       e.stopPropagation()
                       handleDeleteSession(session.id)
                     }}
-                    className="absolute right-1 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-red-400 hover:text-red-300 hover:bg-red-500/20 transition-opacity"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 opacity-60 hover:opacity-100 text-red-400 hover:text-red-300 hover:bg-red-500/20 transition-opacity"
                   >
                     <Trash2 className="size-4" />
                   </Button>
@@ -544,7 +544,7 @@ export default function ChatPage() {
                       <Sparkles className="size-12 text-cyan-300" />
                     </div>
                     <div className="space-y-2">
-                      <h1 className="text-4xl font-bold text-white">NexusAI</h1>
+                      <h1 className="text-4xl font-bold text-white">Brainlyx AI</h1>
                       <p className="text-lg text-cyan-300 font-medium">Intelligent Assistant</p>
                     </div>
                   </div>

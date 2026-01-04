@@ -1,6 +1,6 @@
-# Contributing to NexusAI
+# Contributing to Brainlyx AI
 
-Thank you for your interest in contributing to NexusAI! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Brainlyx AI! This document provides guidelines and information for contributors.
 
 ## 🚀 Getting Started
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing to NexusAI! This document provides g
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/Mamoonkhan11/NexusAI.git
-   cd NexusAI
+   git clone https://github.com/Mamoonkhan11/BrainlyxAI.git
+   cd BrainlyxAI
    ```
 3. **Install dependencies**:
    ```bash
@@ -188,5 +188,5 @@ npm run start
 - [ ] Breaking changes documented
 - [ ] Security implications considered
 
-Thank you for contributing to NexusAI! 🎉
+Thank you for contributing to Brainlyx AI! 🎉
 #
