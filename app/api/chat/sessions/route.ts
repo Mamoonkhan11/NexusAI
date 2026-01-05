@@ -20,11 +20,12 @@ export async function GET() {
       return NextResponse.json({ error: "Failed to load sessions" }, { status: 500 })
     }
 
-    // Format sessions with proper title and timestamp
+    // Build sessions list; do not perform server-side locale formatting for timestamps.
+    // Return raw `created_at` so the client can format it in the user's local timezone.
     const sessions = await Promise.all(
       (data || []).map(async (session: any) => {
         let title = session.title || "New Chat"
-        
+
         // If title is empty, get first user message as title
         if (!session.title || session.title.trim() === "") {
           const { data: firstMessage } = await supabase
@@ -56,14 +57,7 @@ export async function GET() {
         return {
           id: session.id,
           title,
-          timestamp: new Date(session.created_at).toLocaleString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: session.created_at ? new Date(session.created_at).getFullYear() !== new Date().getFullYear() ? "numeric" : undefined : undefined,
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true
-          }),
+          // Provide raw ISO timestamp; the client will format this for the user's timezone.
           created_at: session.created_at
         }
       })

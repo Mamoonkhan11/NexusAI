@@ -22,7 +22,7 @@ type Message = {
 type ChatSession = {
   id: string
   title: string
-  timestamp: string
+  created_at?: string
 }
 
 type UserKeys = {
@@ -448,7 +448,16 @@ export default function ChatPage() {
                       <MessageSquare className="size-4 mt-0.5 shrink-0 text-cyan-400" />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium truncate">{session.title}</p>
-                        <p className="text-xs text-white/60 mt-0.5">{session.timestamp}</p>
+                        <p className="text-xs text-white/60 mt-0.5">
+                          {session.created_at ? new Date(session.created_at).toLocaleString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: new Date(session.created_at).getFullYear() !== new Date().getFullYear() ? "numeric" : undefined,
+                            hour: "numeric",
+                            minute: "2-digit",
+                            hour12: true
+                          }) : "Unknown"}
+                        </p>
                       </div>
                     </div>
                   </button>

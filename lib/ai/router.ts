@@ -3,7 +3,7 @@ import { sendToModel as sendToOpenAI } from "./openaiClient";
 import { sendToModel as sendToGemini } from "./geminiClient";
 import { sendToModel as sendToClaude } from "./claudeClient";
 import { sendToModel as sendToGroq } from "./groqClient";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 interface ChatMessage {
   role: "user" | "assistant" | "developer";
@@ -18,7 +18,7 @@ async function logApiUsage(userId: string | undefined, provider: string) {
   }
 
   try {
-    const supabase = await createClient();
+    const supabase = createAdminClient();
     const { data, error } = await supabase.from("api_logs").insert({
       user_id: userId,
       provider,

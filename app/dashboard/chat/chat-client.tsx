@@ -39,8 +39,7 @@ interface Message {
 interface ChatSession {
   id: string
   title: string
-  timestamp: string
-  created_at: string
+  created_at?: string
 }
 
 interface ChatPageClientProps {
@@ -416,7 +415,14 @@ export function ChatPageClient({
                         {session.title}
                       </div>
                       <div className="text-xs text-white/60 truncate">
-                        {session.timestamp}
+                        {session.created_at ? new Date(session.created_at).toLocaleString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: new Date(session.created_at).getFullYear() !== new Date().getFullYear() ? "numeric" : undefined,
+                          hour: "numeric",
+                          minute: "2-digit",
+                          hour12: true
+                        }) : "Unknown"}
                       </div>
                     </div>
                   </Button>
