@@ -27,6 +27,18 @@ Try the intelligent AI assistant powered by Vionys - bridging obstacles in AI te
 
 Experience the future of intelligent automation where complex AI interactions become simple, secure, and intuitive.
 
+## Brainlyx Response Style
+
+Brainlyx AI delivers **professional, trustworthy, and human-like responses** that are suitable for enterprise and academic use. Our proprietary response system ensures:
+
+- **Consistent Professional Tone** - Polite, neutral, and encouraging communication
+- **Clear Structure** - Brief answers first, detailed explanations when needed
+- **Actionable Information** - Practical guidance with logical organization
+- **Enterprise Standards** - No emojis, slang, or generic AI patterns
+- **Transparent Limitations** - Honest about capabilities and constraints
+
+The system applies consistently across all AI providers (OpenAI, Google Gemini, Anthropic Claude, and Groq) while preserving user customization options.
+
 ## Features
 
 ### Multi-Model AI Support
@@ -41,6 +53,12 @@ Experience the future of intelligent automation where complex AI interactions be
 - **Zero data retention** - Your conversations stay private
 - **Encrypted communication** - Secure end-to-end connections
 - **Self-hosted option** - Run entirely on your infrastructure
+
+### Professional AI Responses
+- **Brainlyx Response Style** - Consistent professional tone across all AI models
+- **Enterprise-Ready Communication** - Polite, accurate, and user-friendly responses
+- **Customizable Personality** - Preserve user-specific instructions while maintaining professionalism
+- **No Generic Responses** - Eliminates robotic or generic AI communication patterns
 
 ### Modern User Interface
 - **Responsive design** - Works perfectly on all devices
@@ -70,6 +88,7 @@ Experience the future of intelligent automation where complex AI interactions be
 </p>
 
 Experience Brainlyx AI in action:
+- **Professional AI responses** with enterprise-grade communication
 - **Interactive chat** with multiple AI models
 - **Seamless model switching** during conversations
 - **Real-time streaming responses**
@@ -158,7 +177,7 @@ Experience Brainlyx AI in action:
 
 ## API Support
 
-Brainlyx AI supports the following AI providers:
+Brainlyx AI supports the following AI providers with **unified professional response styling**:
 
 | Provider | Models | Key Features |
 |----------|--------|--------------|
@@ -166,6 +185,8 @@ Brainlyx AI supports the following AI providers:
 | **Google** | Gemini Pro, Gemini Ultra | Multimodal, Advanced Reasoning |
 | **Anthropic** | Claude 3, Claude 2 | Safe AI, Long Context |
 | **Groq** | Mixtral, Llama 2 | Ultra-fast Inference |
+
+**All providers receive consistent Brainlyx response formatting** ensuring professional, enterprise-ready communication regardless of the underlying AI model.
 
 ### API Key Configuration
 
@@ -193,10 +214,14 @@ brainlyx/
 │   └── feedback-form.tsx         # User feedback
 ├── lib/                          # Utility libraries
 │   ├── ai/                       # AI model integrations
+│   │   ├── systemPrompt.ts       # Brainlyx response style system
+│   │   ├── router.ts             # AI provider routing and orchestration
+│   │   ├── modelSelector.ts      # Model selection logic
 │   │   ├── openaiClient.ts       # OpenAI integration
 │   │   ├── geminiClient.ts       # Google Gemini
 │   │   ├── claudeClient.ts       # Anthropic Claude
-│   │   └── groqClient.ts         # Groq integration
+│   │   ├── groqClient.ts         # Groq integration
+│   │   └── testKeys.ts           # API key testing utilities
 │   ├── supabase/                 # Database utilities
 │   └── utils.ts                  # Helper functions
 ├── scripts/                      # Setup and utility scripts

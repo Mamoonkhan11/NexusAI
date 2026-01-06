@@ -4,6 +4,7 @@ import { sendToModel as sendToGemini } from "./geminiClient";
 import { sendToModel as sendToClaude } from "./claudeClient";
 import { sendToModel as sendToGroq } from "./groqClient";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { DEFAULT_BRAINLYX_PROMPT } from "./systemPrompt";
 
 interface ChatMessage {
   role: "user" | "assistant" | "developer";
@@ -35,7 +36,7 @@ async function logApiUsage(userId: string | undefined, provider: string) {
   }
 }
 
-export async function routeToAI(userKeys: UserKeys, messages: ChatMessage[], stream: boolean = false, preferredProvider?: string, strictMode: boolean = false, userId?: string): Promise<string | ReadableStream> {
+export async function routeToAI(userKeys: UserKeys, messages: ChatMessage[], stream: boolean = false, preferredProvider?: string, strictMode: boolean = false, userId?: string, systemPrompt?: string): Promise<string | ReadableStream> {
   console.log(
     "routeToAI called with keys:",
     {
@@ -47,8 +48,11 @@ export async function routeToAI(userKeys: UserKeys, messages: ChatMessage[], str
   );
   console.log("preferredProvider:", preferredProvider, "strictMode:", strictMode);
 
+  // Apply Brainlyx system prompt by default if no developer message exists
+  const effectiveSystemPrompt = systemPrompt || DEFAULT_BRAINLYX_PROMPT;
+
   // Normalize message contents: if content is a JSON array (file/text parts), convert to a single prompt string
-  const normalizedMessages: ChatMessage[] = messages.map((m) => {
+  let normalizedMessages: ChatMessage[] = messages.map((m) => {
     let content = m.content as any
     if (typeof content !== "string") {
       try {
@@ -70,6 +74,24 @@ export async function routeToAI(userKeys: UserKeys, messages: ChatMessage[], str
     }
     return { role: m.role, content }
   })
+
+  // Ensure Brainlyx system prompt is applied (replace or add developer message)
+  const hasDeveloperMessage = normalizedMessages.some(m => m.role === "developer")
+  if (!hasDeveloperMessage) {
+    normalizedMessages = [
+      { role: "developer", content: effectiveSystemPrompt },
+      ...normalizedMessages
+    ]
+  } else {
+    // Replace existing developer message with Brainlyx prompt + any custom instructions
+    normalizedMessages = normalizedMessages.map(m => {
+      if (m.role === "developer") {
+        // If there's already a developer message, combine it with Brainlyx prompt
+        return { role: "developer", content: effectiveSystemPrompt + "\n\n" + m.content }
+      }
+      return m
+    })
+  }
 
   // Provider priority
   let providers: string[] = [];

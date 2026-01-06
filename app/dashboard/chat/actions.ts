@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 import { routeToAI } from "@/lib/ai/router"
 import { chooseModel } from "@/lib/ai/modelSelector"
 import { verifyApiKey } from "../api-keys/actions"
+import { createCustomSystemPrompt } from "@/lib/ai/systemPrompt"
 
 interface ChatMessage {
   role: "user" | "assistant" | "developer"
@@ -121,13 +122,14 @@ export async function sendMessage(formData: FormData) {
     return { error: "No valid API keys found. Please add at least one API key or set environment variables for testing." }
   }
 
-  // Prepare system message
-  const agentPrompt = formData.get("systemMessage") as string ||
-                     "You are a versatile AI assistant capable of helping with various tasks."
+  // Prepare system message - use Brainlyx professional style with user customizations
+  const userAgentInstructions = formData.get("systemMessage") as string
+  const systemPrompt = userAgentInstructions && userAgentInstructions.trim() !== ""
+    ? createCustomSystemPrompt(userAgentInstructions)
+    : undefined // Let router use default Brainlyx prompt
 
-  // Create messages array with developer message, chat history, and current message
+  // Create messages array with chat history and current message (system prompt handled by router)
   const messages: ChatMessage[] = [
-    { role: "developer", content: agentPrompt },
     ...chatHistory,
     { role: "user", content: message }
   ]
@@ -223,7 +225,7 @@ export async function sendMessage(formData: FormData) {
     if (fileUrl) {
       console.log("Processing file analysis request")
       // Use file analysis function
-      const aiResponse = await analyzeFileWithAI(apiKeys as UserKeys, messages, fileContent!, fileType!, modelSelection.provider)
+      const aiResponse = await analyzeFileWithAI(apiKeys as UserKeys, messages, fileContent!, fileType!, modelSelection.provider, systemPrompt)
 
       if (!aiResponse) {
         throw new Error("AI provider returned no response for file analysis")
@@ -280,7 +282,7 @@ export async function sendMessage(formData: FormData) {
 
       // Call routeToAI and return its response
       const startTime = Date.now()
-      const aiResponse = await routeToAI(apiKeys as UserKeys, messages, shouldStream, preferredProvider, strictMode, userId)
+      const aiResponse = await routeToAI(apiKeys as UserKeys, messages, shouldStream, preferredProvider, strictMode, userId, systemPrompt)
       const aiDuration = Date.now() - startTime
       console.log(`[Message Send] AI response received in ${aiDuration}ms`)
 
@@ -583,7 +585,8 @@ async function analyzeFileWithAI(
   messages: ChatMessage[],
   fileContent: string,
   fileType: string,
-  provider: string
+  provider: string,
+  systemPrompt?: string
 ): Promise<string> {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -618,7 +621,7 @@ async function analyzeFileWithAI(
 
       case 'groq':
         // Groq doesn't support file analysis, fall back to text-only
-        return await routeToAI(apiKeys, messages, false, undefined, false, user.id) as string
+        return await routeToAI(apiKeys, messages, false, undefined, false, user.id, systemPrompt) as string
 
       default:
         throw new Error(`File analysis not supported for provider: ${provider}`)
